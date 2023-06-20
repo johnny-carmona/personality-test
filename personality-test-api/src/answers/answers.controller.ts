@@ -1,11 +1,14 @@
 import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { AnswersService } from './answers.service';
 import { AnswerPayloadDto } from '../dto/answer-payload.dto';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
+@ApiTags('Answers')
 @Controller('answers')
 export class AnswersController {
     constructor(private readonly answersService: AnswersService) { }
 
+    @ApiOperation({ summary: 'Get answers by user email' })
     @Get(':email')
     async findAllByUserEmail(@Param('email') email: string) {
         const answers = await this.answersService.findAllByUserEmail(email);
@@ -18,6 +21,7 @@ export class AnswersController {
         return results;
     }
 
+    @ApiOperation({ summary: 'Create answers' })
     @Post()
     async create(@Body() answerPayloadDto: AnswerPayloadDto) {
         Object.keys(answerPayloadDto.answers).forEach(async key => {
