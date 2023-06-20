@@ -7,9 +7,10 @@ services:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: personalityDB
     volumes:
-      - mysql_data:/var/lib/mysql
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql
     ports:
       - "3306:3306"
+    command: [ "--init-file", "/docker-entrypoint-initdb.d/seed.sql" ]
   api:
     build:
       context: .
