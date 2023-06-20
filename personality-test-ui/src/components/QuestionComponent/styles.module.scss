@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.question-container {
+    border: 1px solid $questionBorderColor;
+    padding: 27px 90px;
+    font-size: 14px;
+    font-family: 'Nunito';
+}
+
+.agree {
+    color: $agreeColor;
+    margin-left: 24px;
+}
+
+.disagree {
+    color: $disagreeColor;
+    margin-right: 24px;
+}
+
+.text {
+    font-size: 18px;
+    margin-bottom: 26px;
+}

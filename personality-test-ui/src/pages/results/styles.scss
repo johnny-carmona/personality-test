@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.results-page {
+    border: solid 1px $questionBorderColor;
+    padding: 45px;
+    margin: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    >div:first-of-type {
+        flex-grow: 1;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+}
