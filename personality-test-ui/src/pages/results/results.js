@@ -24,7 +24,7 @@ export default function Results() {
   function getResultText() {
     let resultText = '';
     answerResults && Object.keys(answerResults).forEach((key) => {
-      resultText = answerResults[key] > 0 ? resultText + key[0] : resultText + key[1];
+      resultText = answerResults[key] < 1 ? resultText + key[0] : resultText + key[1];
     });
     return resultText;
   }

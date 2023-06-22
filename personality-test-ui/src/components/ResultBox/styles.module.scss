@@ -16,7 +16,7 @@
     height: 15px;
     background-color: $barColor;
     border-radius: 3px;
-    background: linear-gradient(90deg, $barColor 50%, $barFilledColor 50%);
+    background: linear-gradient(90deg, $barFilledColor 50%, $barColor 50%);
 }
 
 .bar-container {
