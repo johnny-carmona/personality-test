@@ -23,12 +23,12 @@ export default function Results() {
 
   function getResultText() {
     let resultText = '';
-    answerResults && Object.keys(answerResults).forEach((key) => {
-      resultText = answerResults[key] < 1 ? resultText + key[0] : resultText + key[1];
+    const orderedKeys = ['EI', 'SN', 'TF', 'JP'];
+    orderedKeys.forEach((key) => {
+      resultText = answerResults && answerResults[key] < 1 ? resultText + key[0] : resultText + key[1];
     });
     return resultText;
   }
-
   return (
     <div className="results-page">
       <div>
